@@ -1,0 +1,235 @@
+:root{
+    --kraft-1:#F2E5C9;
+    --kraft-2:#E6D2A6;
+    --tube-brown:#B08F63;
+    --brown-secondary:#6B4A31;
+    --deep-brown:#3B2A1A;
+    --stamp-ink:#8B3A2B;
+    --line-soft:#CBAE84;
+  }
+ 
+  *{ box-sizing:border-box; }
+ 
+  html,body{
+    margin:0;
+    padding:0;
+    min-height:100%;
+  }
+ 
+  body{
+    font-family:'Archivo', sans-serif;
+    color:var(--deep-brown);
+    background:
+      radial-gradient(ellipse at 15% 15%, var(--kraft-1) 0%, var(--kraft-2) 60%, #DCC494 100%);
+    min-height:100dvh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    position:relative;
+  }
+ 
+  /* ---------- textura de papel ---------- */
+  .grain{
+    position:fixed;
+    inset:0;
+    opacity:0.28;
+    mix-blend-mode:multiply;
+    pointer-events:none;
+  }
+ 
+  /* ---------- anillos de fondo (corte transversal del tubo) ---------- */
+  .rings-bg{
+    position:absolute;
+    top:0;
+    left:0;
+    width:min(70vw, 620px);
+    height:auto;
+    transform:translate(-32%, -34%);
+    opacity:0.55;
+    pointer-events:none;
+  }
+  .rings-bg circle{
+    fill:none;
+    stroke:var(--tube-brown);
+  }
+ 
+  .rings-bg--br{
+    top:auto;
+    left:auto;
+    bottom:0;
+    right:0;
+    transform:translate(38%, 40%);
+    width:min(50vw, 420px);
+    opacity:0.35;
+  }
+ 
+  /* ---------- cinta decorativa ---------- */
+  .tape{
+    position:absolute;
+    top:9%;
+    right:-12%;
+    width:80%;
+    max-width:720px;
+    padding:0.5rem 0;
+    background:var(--tube-brown);
+    color:var(--kraft-1);
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:clamp(0.6rem, 1.1vw, 0.78rem);
+    letter-spacing:0.28em;
+    text-align:center;
+    white-space:nowrap;
+    overflow:hidden;
+    transform:rotate(7deg);
+    box-shadow:0 2px 6px rgba(59,42,26,0.18);
+    opacity:0.92;
+  }
+ 
+  /* ---------- contenido principal ---------- */
+  .content{
+    position:relative;
+    z-index:2;
+    max-width:640px;
+    width:100%;
+    padding:clamp(1.5rem, 6vw, 3rem);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:clamp(1.1rem, 3vw, 1.6rem);
+  }
+ 
+  .stamp{
+    position:relative;
+    display:inline-block;
+    border:3px solid var(--stamp-ink);
+    border-radius:999px;
+    padding:clamp(0.85rem, 2.6vw, 1.35rem) clamp(1.7rem, 6vw, 3.1rem);
+    transform:rotate(-4deg);
+    filter:drop-shadow(0 3px 0 rgba(59,42,26,0.08));
+    animation:stampPress 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;
+  }
+  .stamp::before{
+    content:"";
+    position:absolute;
+    inset:6px;
+    border:1.5px dashed var(--stamp-ink);
+    border-radius:999px;
+    opacity:0.6;
+  }
+  .stamp-text{
+    display:block;
+    font-family:'Big Shoulders Stencil', sans-serif;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    font-size:clamp(1.7rem, 6.4vw, 3.1rem);
+    color:var(--stamp-ink);
+    white-space:nowrap;
+  }
+ 
+  .tagline{
+    font-weight:600;
+    font-size:clamp(1.05rem, 3vw, 1.3rem);
+    color:var(--deep-brown);
+    max-width:26ch;
+  }
+ 
+  .sub{
+    font-weight:500;
+    font-size:clamp(0.85rem, 2.2vw, 1rem);
+    color:var(--brown-secondary);
+    max-width:34ch;
+    margin-top:-0.6rem;
+  }
+ 
+  .cutline{
+    display:flex;
+    align-items:center;
+    gap:0.6rem;
+    width:100%;
+    max-width:340px;
+    color:var(--tube-brown);
+  }
+  .cutline svg{
+    flex:none;
+    width:16px;
+    height:16px;
+  }
+  .cutline .dash{
+    flex:1;
+    height:0;
+    border-top:1.5px dashed var(--line-soft);
+  }
+ 
+  .spec-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:500;
+    font-size:clamp(0.7rem, 1.8vw, 0.82rem);
+    letter-spacing:0.12em;
+    color:var(--brown-secondary);
+    text-transform:uppercase;
+  }
+ 
+  .divider{
+    width:100%;
+    max-width:300px;
+    height:0;
+    border-top:1.5px dashed var(--line-soft);
+  }
+ 
+  .contact{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0.55rem;
+  }
+ 
+  .contact-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:0.5rem;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:500;
+    font-size:clamp(0.92rem, 1.9vw, 1.1rem);
+    letter-spacing:0.02em;
+    color:var(--brown-secondary);
+  }
+  .contact-row svg{
+    flex:none;
+    width:15px;
+    height:15px;
+    color:var(--tube-brown);
+  }
+  .contact-row a{
+    color:inherit;
+    text-decoration:none;
+    border-bottom:1px dotted var(--tube-brown);
+  }
+  .contact-row a:hover{
+    color:var(--stamp-ink);
+    border-color:var(--stamp-ink);
+  }
+ 
+  @keyframes stampPress{
+    0%{ opacity:0; transform:rotate(-4deg) scale(1.35); }
+    60%{ opacity:1; transform:rotate(-4deg) scale(0.94); }
+    100%{ opacity:1; transform:rotate(-4deg) scale(1); }
+  }
+ 
+  @media (prefers-reduced-motion: reduce){
+    .stamp{ animation:none; opacity:1; }
+  }
+ 
+  @media (max-width:600px){
+    .tape{ display:none; }
+    .rings-bg{ width:85vw; }
+    .rings-bg--br{ width:60vw; }
+  }
+ 
+  @media (max-height:480px){
+    .rings-bg, .rings-bg--br{ opacity:0.22; }
+    .content{ gap:0.7rem; }
+  }
