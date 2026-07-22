@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Próximamente — Tubos de cartón</title>
+    <link rel="icon" href="imgs/logo_tceo.svg" type="image/svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@700;800&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+ 
+  <svg width="0" height="0" style="position:absolute">
+    <filter id="paperGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0"/>
+    </filter>
+  </svg>
+  <div class="grain" style="filter:url(#paperGrain);"></div>
+ 
+  <svg class="rings-bg" viewBox="0 0 400 400" aria-hidden="true">
+    <circle cx="200" cy="200" r="60" stroke-width="6" opacity="0.9"/>
+    <circle cx="200" cy="200" r="95" stroke-width="5" opacity="0.75"/>
+    <circle cx="200" cy="200" r="130" stroke-width="4" opacity="0.6"/>
+    <circle cx="200" cy="200" r="165" stroke-width="3" opacity="0.45"/>
+    <circle cx="200" cy="200" r="198" stroke-width="2" opacity="0.3"/>
+  </svg>
+ 
+  <svg class="rings-bg rings-bg--br" viewBox="0 0 400 400" aria-hidden="true">
+    <circle cx="200" cy="200" r="70" stroke-width="5" opacity="0.8"/>
+    <circle cx="200" cy="200" r="110" stroke-width="4" opacity="0.6"/>
+    <circle cx="200" cy="200" r="150" stroke-width="3" opacity="0.4"/>
+    <circle cx="200" cy="200" r="190" stroke-width="2" opacity="0.25"/>
+  </svg>
+ 
+  <div class="tape" aria-hidden="true">
+    TUBOS DE CARTÓN &nbsp;•&nbsp; TUBOS DE CARTÓN &nbsp;•&nbsp; TUBOS DE CARTÓN &nbsp;•&nbsp;
+  </div>
+ 
+  <main class="content">
+    <div class="stamp">
+      <span class="stamp-text">Próximamente</span>
+    </div>
+ 
+    <p class="tagline">Estamos enrollando los últimos detalles.</p>
+    <p class="sub">Venta y distribución de tubos de cartón</p>
+ 
+    <div class="cutline">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="6" cy="6" r="3"/>
+        <circle cx="6" cy="18" r="3"/>
+        <line x1="20" y1="4" x2="8.12" y2="15.88"/>
+        <line x1="14.47" y1="14.48" x2="20" y2="20"/>
+        <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+      </svg>
+      <span class="dash"></span>
+    </div>
+ 
+    <!-- <p class="spec-tag">Ø 76 – 150 mm</p> -->
+ 
+    <div class="divider" aria-hidden="true"></div>
+ 
+    <div class="contact">
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <a href="mailto:hola@tuempresa.com">contacto@distribuidoratceo.com.mx</a>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <a href="tel:+523300000000">+52 33 3113 7246</a>
+      </div>
+    </div>
+  </main>
+ 
+</body>
+</html>
